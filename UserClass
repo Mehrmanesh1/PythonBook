@@ -1,0 +1,31 @@
+import datetime
+import time
+
+class User:
+    def __init__(self, firstname, lastname, birthday, email, ph_number):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.birthday = datetime.date(birthday[2],birthday[0],birthday[1])
+        self.email = email
+        self.phonenum = ph_number
+        self.name = f"{firstname} {lastname}"
+
+    def printall(self):
+        print("--------")
+        print(self.birthday)
+        print(self.email)
+        print(self.phonenum)
+        print(self.name)
+        print("--------")
+
+    def greet(self, user):
+        print(f"Hello, {user.firstname}")
+        time.sleep(2)
+        print(f"My name is {self.firstname}")
+
+amir = User("Amir","Mehr", [1,1,2000],"amir@gmail.com","18002561111")
+saeid = User("Saeid","Mehr", [1,8,2001],"saeid@gmail.com","13471563200")
+
+amir.printall()
+
+amir.greet(saeid)
