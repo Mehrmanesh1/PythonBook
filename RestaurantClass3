@@ -12,6 +12,16 @@ class Restaurant:
         self.number_served = n
         print(f"You served {n} customers")
 
+class IceCreamShop(Restaurant):
+    def __init__(self,restaurant_name, cuisine_type,flavors):
+        self.flavors = flavors
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+        
+    def return_flavors(self):
+        print(self.flavors)
+
 kabab_restaurant = Restaurant("Kabab Shop", "Persian")
 kabab_restaurant.open()
 kabab_restaurant.describe_restaurant()
@@ -27,3 +37,8 @@ Bills_Breakfast.describe_restaurant()
 sam_burger = Restaurant("Samburger", "American")
 sam_burger.open()
 sam_burger.describe_restaurant()
+
+icecream = IceCreamShop("Icecream","Worldwide",["Strawberry","Vanilla"])
+icecream.open()
+icecream.describe_restaurant()
+icecream.return_flavors()
