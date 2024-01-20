@@ -38,6 +38,13 @@ class Battery:
 
         print(f"This car can go about {range} miles on a full charge")
 
+    def upgrade_battery(self):
+        if self.battery_size < 65:
+            self.battery_size = 65
+            print("Battery upgraded to 65 kwh")
+
+
+
 class ElectricCar(Car):
     def __init__(self,make,model,year):
         super().__init__(make,model,year)
@@ -46,6 +53,8 @@ class ElectricCar(Car):
     def describe_battery(self):
         print(f"This car has a {self.battery.battery_size}-kWh battery.")
 
+
+
 my_new_car = Car('audi', 'a4', 2024)
 print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
@@ -53,3 +62,6 @@ my_new_car.read_odometer()
 my_leaf = ElectricCar('nissan','leaf', 2024)
 print(my_leaf.get_descriptive_name())
 my_leaf.describe_battery()
+my_leaf.battery.get_range()
+my_leaf.battery.upgrade_battery()
+my_leaf.battery.get_range()
